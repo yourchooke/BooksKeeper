@@ -13,6 +13,11 @@
 		2788520229DEADFE003B2876 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2788520029DEADFE003B2876 /* Main.storyboard */; };
 		2788520429DEADFF003B2876 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2788520329DEADFF003B2876 /* Assets.xcassets */; };
 		2788520729DEADFF003B2876 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2788520529DEADFF003B2876 /* LaunchScreen.storyboard */; };
+		2788521029DEDAAF003B2876 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 2788520F29DEDAAF003B2876 /* Realm */; };
+		2788521229DEDAAF003B2876 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2788521129DEDAAF003B2876 /* RealmSwift */; };
+		2788521429DEF7E2003B2876 /* BooksListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2788521329DEF7E2003B2876 /* BooksListVC.swift */; };
+		2788521629DEF80D003B2876 /* BooksListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2788521529DEF80D003B2876 /* BooksListViewModel.swift */; };
+		2788521C29DEF90F003B2876 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2788521B29DEF90F003B2876 /* Book.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,9 @@
 		2788520329DEADFF003B2876 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2788520629DEADFF003B2876 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2788520829DEADFF003B2876 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2788521329DEF7E2003B2876 /* BooksListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksListVC.swift; sourceTree = "<group>"; };
+		2788521529DEF80D003B2876 /* BooksListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksListViewModel.swift; sourceTree = "<group>"; };
+		2788521B29DEF90F003B2876 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +39,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2788521229DEDAAF003B2876 /* RealmSwift in Frameworks */,
+				2788521029DEDAAF003B2876 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +66,8 @@
 		278851F929DEADFD003B2876 /* BooksKeeper */ = {
 			isa = PBXGroup;
 			children = (
+				2788521829DEF82D003B2876 /* Models */,
+				2788521729DEF81D003B2876 /* BooksList */,
 				278851FA29DEADFD003B2876 /* AppDelegate.swift */,
 				278851FC29DEADFE003B2876 /* SceneDelegate.swift */,
 				278851FE29DEADFE003B2876 /* ViewController.swift */,
@@ -65,6 +77,23 @@
 				2788520829DEADFF003B2876 /* Info.plist */,
 			);
 			path = BooksKeeper;
+			sourceTree = "<group>";
+		};
+		2788521729DEF81D003B2876 /* BooksList */ = {
+			isa = PBXGroup;
+			children = (
+				2788521529DEF80D003B2876 /* BooksListViewModel.swift */,
+				2788521329DEF7E2003B2876 /* BooksListVC.swift */,
+			);
+			path = BooksList;
+			sourceTree = "<group>";
+		};
+		2788521829DEF82D003B2876 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2788521B29DEF90F003B2876 /* Book.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +112,10 @@
 			dependencies = (
 			);
 			name = BooksKeeper;
+			packageProductDependencies = (
+				2788520F29DEDAAF003B2876 /* Realm */,
+				2788521129DEDAAF003B2876 /* RealmSwift */,
+			);
 			productName = BooksKeeper;
 			productReference = 278851F729DEADFD003B2876 /* BooksKeeper.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +144,9 @@
 				Base,
 			);
 			mainGroup = 278851EE29DEADFD003B2876;
+			packageReferences = (
+				2788520E29DEDAAF003B2876 /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = 278851F829DEADFD003B2876 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -140,7 +176,10 @@
 			files = (
 				278851FF29DEADFE003B2876 /* ViewController.swift in Sources */,
 				278851FB29DEADFD003B2876 /* AppDelegate.swift in Sources */,
+				2788521C29DEF90F003B2876 /* Book.swift in Sources */,
 				278851FD29DEADFE003B2876 /* SceneDelegate.swift in Sources */,
+				2788521429DEF7E2003B2876 /* BooksListVC.swift in Sources */,
+				2788521629DEF80D003B2876 /* BooksListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,6 +403,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2788520E29DEDAAF003B2876 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2788520F29DEDAAF003B2876 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2788520E29DEDAAF003B2876 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		2788521129DEDAAF003B2876 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2788520E29DEDAAF003B2876 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 278851EF29DEADFD003B2876 /* Project object */;
 }

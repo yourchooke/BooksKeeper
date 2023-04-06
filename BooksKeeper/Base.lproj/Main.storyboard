@@ -77,6 +77,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="430" height="43.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="3gt-eF-sbf" kind="show" id="dGW-qK-ggC"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -89,6 +92,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BZO-kN-uW2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2018" y="-3"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="5Mn-P1-NSY">
+            <objects>
+                <viewController id="3gt-eF-sbf" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mUZ-pS-VjA">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="922"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="hV0-E9-MrC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="kuF-9B-XPm"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v1q-0F-ezE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3073" y="-3"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HdZ-gz-bqk">
