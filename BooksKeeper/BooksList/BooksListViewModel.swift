@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+protocol BooksListViewModelProtocol {
+    var books: [Book] {get set}
+}
+
+class BooksListViewModel: BooksListViewModelProtocol {
+    var books: [Book] = []
+    
+    
+}

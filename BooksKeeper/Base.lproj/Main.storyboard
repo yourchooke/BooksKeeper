@@ -61,16 +61,16 @@
             </objects>
             <point key="canvasLocation" x="112.21374045801527" y="-2.1126760563380285"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Books ListVC-->
         <scene sceneID="Ji8-S8-plU">
             <objects>
-                <tableViewController id="bsa-3a-8ct" sceneMemberID="viewController">
+                <tableViewController id="bsa-3a-8ct" customClass="BooksListVC" customModule="BooksKeeper" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="7cS-IP-2PK">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="922"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="hiu-4N-iVs">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="bookID" id="hiu-4N-iVs">
                                 <rect key="frame" x="0.0" y="50" width="430" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hiu-4N-iVs" id="opP-en-6sV">
@@ -78,7 +78,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="3gt-eF-sbf" kind="show" id="dGW-qK-ggC"/>
+                                    <segue destination="3gt-eF-sbf" kind="show" identifier="segueToEditor" id="dGW-qK-ggC"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -87,36 +87,62 @@
                             <outlet property="delegate" destination="bsa-3a-8ct" id="0YT-FQ-lLb"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="MZV-oJ-cFV"/>
+                    <navigationItem key="navigationItem" id="MZV-oJ-cFV">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="sort-descending" id="kQZ-iv-mbg"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="74i-Z8-tHR">
+                            <connections>
+                                <action selector="addButtonAction:" destination="bsa-3a-8ct" id="Tvm-bZ-tgJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BZO-kN-uW2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2018" y="-3"/>
         </scene>
-        <!--View Controller-->
+        <!--Add new book-->
         <scene sceneID="5Mn-P1-NSY">
             <objects>
-                <viewController id="3gt-eF-sbf" sceneMemberID="viewController">
+                <viewController id="3gt-eF-sbf" customClass="BookEditorVC" customModule="BooksKeeper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mUZ-pS-VjA">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="922"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Book name" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lfB-mC-NSp">
+                                <rect key="frame" x="20" y="76" width="390" height="34"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="FNp-5S-hJ4">
+                                <rect key="frame" x="20" y="135" width="390" height="216"/>
+                            </datePicker>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="hV0-E9-MrC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="FNp-5S-hJ4" firstAttribute="leading" secondItem="hV0-E9-MrC" secondAttribute="leading" constant="20" id="8nf-GV-odh"/>
+                            <constraint firstItem="lfB-mC-NSp" firstAttribute="leading" secondItem="hV0-E9-MrC" secondAttribute="leading" constant="20" id="QFM-1N-nP3"/>
+                            <constraint firstAttribute="trailing" secondItem="FNp-5S-hJ4" secondAttribute="trailing" constant="20" id="TdS-66-bsd"/>
+                            <constraint firstItem="FNp-5S-hJ4" firstAttribute="top" secondItem="lfB-mC-NSp" secondAttribute="bottom" constant="25" id="b6o-Px-a52"/>
+                            <constraint firstItem="lfB-mC-NSp" firstAttribute="top" secondItem="hV0-E9-MrC" secondAttribute="top" constant="20" id="b9e-Wm-NnJ"/>
+                            <constraint firstItem="hV0-E9-MrC" firstAttribute="trailing" secondItem="lfB-mC-NSp" secondAttribute="trailing" constant="20" id="lsn-ky-VPW"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="kuF-9B-XPm"/>
+                    <navigationItem key="navigationItem" title="Add new book" largeTitleDisplayMode="always" id="kuF-9B-XPm"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v1q-0F-ezE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3073" y="-3"/>
+            <point key="canvasLocation" x="2917.6744186046512" y="-3.218884120171674"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HdZ-gz-bqk">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7b1-70-AQj" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="7b1-70-AQj" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="CTG-Kk-E1z"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="8qh-6E-Hgz">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="56"/>
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -133,6 +159,8 @@
         <image name="BookKeeperLogo" width="272" height="225"/>
         <image name="BooksKeeperName" width="269" height="40"/>
         <image name="loading" width="102" height="102"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="sort-descending" width="20" height="20"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
