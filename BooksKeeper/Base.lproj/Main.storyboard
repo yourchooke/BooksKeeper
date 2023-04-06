@@ -108,24 +108,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="430" height="922"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Book name" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lfB-mC-NSp">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Book name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lfB-mC-NSp">
                                 <rect key="frame" x="20" y="76" width="390" height="34"/>
-                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="FNp-5S-hJ4">
                                 <rect key="frame" x="20" y="135" width="390" height="216"/>
                             </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lVp-gm-Nii">
+                                <rect key="frame" x="35" y="571" width="360" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hV0-E9-MrC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="FNp-5S-hJ4" firstAttribute="leading" secondItem="hV0-E9-MrC" secondAttribute="leading" constant="20" id="8nf-GV-odh"/>
+                            <constraint firstItem="hV0-E9-MrC" firstAttribute="trailing" secondItem="lVp-gm-Nii" secondAttribute="trailing" constant="35" id="Lth-3E-9sW"/>
                             <constraint firstItem="lfB-mC-NSp" firstAttribute="leading" secondItem="hV0-E9-MrC" secondAttribute="leading" constant="20" id="QFM-1N-nP3"/>
                             <constraint firstAttribute="trailing" secondItem="FNp-5S-hJ4" secondAttribute="trailing" constant="20" id="TdS-66-bsd"/>
+                            <constraint firstItem="lVp-gm-Nii" firstAttribute="leading" secondItem="hV0-E9-MrC" secondAttribute="leading" constant="35" id="aHR-5E-kUc"/>
                             <constraint firstItem="FNp-5S-hJ4" firstAttribute="top" secondItem="lfB-mC-NSp" secondAttribute="bottom" constant="25" id="b6o-Px-a52"/>
                             <constraint firstItem="lfB-mC-NSp" firstAttribute="top" secondItem="hV0-E9-MrC" secondAttribute="top" constant="20" id="b9e-Wm-NnJ"/>
+                            <constraint firstItem="hV0-E9-MrC" firstAttribute="bottom" secondItem="lVp-gm-Nii" secondAttribute="bottom" constant="316" id="hai-op-zNA"/>
                             <constraint firstItem="hV0-E9-MrC" firstAttribute="trailing" secondItem="lfB-mC-NSp" secondAttribute="trailing" constant="20" id="lsn-ky-VPW"/>
                         </constraints>
                     </view>
