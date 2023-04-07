@@ -47,6 +47,12 @@ class BooksListVC: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let book = bookList[indexPath.row]
+        performSegue(withIdentifier: "segueToEditor", sender: book)
+        
+    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -87,10 +93,10 @@ class BooksListVC: UITableViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let editorVC = segue.destination as! BookEditorVC
+        editorVC.book = sender as? Book
     }
 
     @IBAction func addButtonAction(_ sender: Any) {
-        
         performSegue(withIdentifier: "segueToEditor", sender: Any?.self )
     }
     

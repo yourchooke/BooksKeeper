@@ -77,9 +77,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="3gt-eF-sbf" kind="show" identifier="segueToEditor" id="dGW-qK-ggC"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -95,6 +92,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="3gt-eF-sbf" kind="show" identifier="segueToEditor" id="iCj-2u-PSU"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BZO-kN-uW2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

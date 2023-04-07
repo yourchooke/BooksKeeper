@@ -29,9 +29,11 @@ class BookEditorVC: UIViewController, UITextFieldDelegate {
     
     func setupEditor(){
         navigationController?.navigationBar.prefersLargeTitles = true
-        if book != nil {
+        if let editingBook = book{
             self.title = "Edit info"
             actionButton.setTitle("Edit", for: .normal)
+            bookNameTextField.text = editingBook.name
+            bookDatePicker.date = editingBook.date
         } else {
             self.title = "Add new book"
             actionButton.setTitle("Add", for: .normal)
