@@ -28,6 +28,12 @@ class StorageManager {
         }
     }
     
+    func delete(_ book: Book) {
+        write {
+            realm.delete(book)
+        }
+    }
+    
     private func write(completion: () -> Void) {
         do {
             try realm.write {
