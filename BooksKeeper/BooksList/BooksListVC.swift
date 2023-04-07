@@ -63,18 +63,6 @@ class BooksListVC: UITableViewController {
         }
         return UISwipeActionsConfiguration(actions: [deleteAction])
     }
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
 
     // MARK: - Navigation
 
@@ -87,5 +75,38 @@ class BooksListVC: UITableViewController {
         performSegue(withIdentifier: "segueToEditor", sender: Any?.self )
     }
     
+    @IBAction func sortButtonAction(_ sender: Any) {
+        // create an actionSheet
+        let actionSheetController: UIAlertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
 
+        // create an action
+        let sortByName: UIAlertAction = UIAlertAction(title: "Sort by name", style: .default) { action -> Void in
+            self.sortBooks()
+
+        }
+
+        let sortByDate: UIAlertAction = UIAlertAction(title: "Sort by date", style: .default) { action -> Void in
+
+            print("Second Action pressed")
+        }
+
+        let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .cancel) { action -> Void in }
+
+        // add actions
+        actionSheetController.addAction(sortByName)
+        actionSheetController.addAction(sortByDate)
+        actionSheetController.addAction(cancelAction)
+
+        present(actionSheetController, animated: true) {
+            print("option menu presented")
+        }
+    }
+    
+    func sortBooks() {
+        bookList = bookList.sorted(byKeyPath: "name", ascending: true)
+        tableView.reloadData()
+    }
+
+    
 }
+

@@ -85,7 +85,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="MZV-oJ-cFV">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="sort-descending" id="kQZ-iv-mbg"/>
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="sort-descending" id="kQZ-iv-mbg">
+                            <connections>
+                                <action selector="sortButtonAction:" destination="bsa-3a-8ct" id="DQk-gF-PUI"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="74i-Z8-tHR">
                             <connections>
                                 <action selector="addButtonAction:" destination="bsa-3a-8ct" id="Tvm-bZ-tgJ"/>
