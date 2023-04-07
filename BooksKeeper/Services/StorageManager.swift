@@ -21,4 +21,21 @@ class StorageManager {
         }
     }
     
+    func edit(_ book: Book, newText: String, newDate: Date) {
+        write {
+            book.name = newText
+            book.date = newDate
+        }
+    }
+    
+    private func write(completion: () -> Void) {
+        do {
+            try realm.write {
+                completion()
+            }
+        } catch {
+            print(error)
+        }
+    }
+    
 }
