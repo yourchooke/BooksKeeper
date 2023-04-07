@@ -16,12 +16,16 @@ class BooksListVC: UITableViewController {
 
         bookList = StorageManager.shared.realm.objects(Book.self)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -34,7 +38,11 @@ class BooksListVC: UITableViewController {
         var content = cell.defaultContentConfiguration()
         let book = bookList[indexPath.row]
         content.text = book.name
-        content.secondaryText = DateFormatter().string(from: book.date)
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd.MM.YY"
+        
+        content.secondaryText = dateFormatter.string(from: book.date)
         cell.contentConfiguration = content
         return cell
     }

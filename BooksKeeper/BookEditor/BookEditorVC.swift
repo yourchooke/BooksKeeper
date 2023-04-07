@@ -19,7 +19,6 @@ class BookEditorVC: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         bookNameTextField.delegate = self
         actionButton.isEnabled = false
         setupEditor()
@@ -32,7 +31,7 @@ class BookEditorVC: UIViewController, UITextFieldDelegate {
         navigationController?.navigationBar.prefersLargeTitles = true
         if book != nil {
             self.title = "Edit info"
-            actionButton.titleLabel?.text = "Edit"
+            actionButton.setTitle("Edit", for: .normal)
         } else {
             self.title = "Add new book"
             actionButton.setTitle("Add", for: .normal)
@@ -54,9 +53,11 @@ class BookEditorVC: UIViewController, UITextFieldDelegate {
             actionButton.isEnabled = false
         } else {
             if book == nil {
-                book = Book(value: [bookNameTextField.text, bookDatePicker.date])
-                if let newBook = book {StorageManager.shared.save(book!)}
+                book = Book(value: [bookNameTextField.text!, bookDatePicker.date] as [Any])
+                if let _ = book {StorageManager.shared.save(book!)}
             }
+            navigationController?.popViewController(animated: true)
+            dismiss(animated: true, completion: nil)
         }
     }
     
