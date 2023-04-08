@@ -81,13 +81,13 @@ class BooksListVC: UITableViewController {
 
         // create an action
         let sortByName: UIAlertAction = UIAlertAction(title: "Sort by name", style: .default) { action -> Void in
-            self.sortBooks()
+            self.sortBooks(by: "name")
 
         }
 
         let sortByDate: UIAlertAction = UIAlertAction(title: "Sort by date", style: .default) { action -> Void in
 
-            print("Second Action pressed")
+            self.sortBooks(by: "date")
         }
 
         let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .cancel) { action -> Void in }
@@ -102,8 +102,8 @@ class BooksListVC: UITableViewController {
         }
     }
     
-    func sortBooks() {
-        bookList = bookList.sorted(byKeyPath: "name", ascending: true)
+    func sortBooks(by key: String) {
+        bookList = bookList.sorted(byKeyPath: key, ascending: true)
         tableView.reloadData()
     }
 
