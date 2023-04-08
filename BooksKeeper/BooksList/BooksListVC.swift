@@ -10,7 +10,8 @@ import RealmSwift
 
 class BooksListVC: UITableViewController {
     var bookList: Results<Book>!
-
+    var sortingKind: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Book list"
@@ -20,6 +21,7 @@ class BooksListVC: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        if let kind = sortingKind {sortBooks(by: kind)}
         tableView.reloadData()
     }
 
@@ -93,12 +95,14 @@ class BooksListVC: UITableViewController {
         // create an action
         let sortByName: UIAlertAction = UIAlertAction(title: "Sort by name", style: .default) { action -> Void in
             self.sortBooks(by: "name")
+            self.sortingKind = "name"
 
         }
 
         let sortByDate: UIAlertAction = UIAlertAction(title: "Sort by date", style: .default) { action -> Void in
 
             self.sortBooks(by: "date")
+            self.sortingKind = "date"
         }
 
         let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .cancel) { action -> Void in }

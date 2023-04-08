@@ -15,6 +15,7 @@ class BookEditorVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var actionButtonBottomConstraint: NSLayoutConstraint!
     
     var book: Book?
+
     
     
     override func viewDidLoad() {
