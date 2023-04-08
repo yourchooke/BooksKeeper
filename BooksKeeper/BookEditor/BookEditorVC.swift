@@ -12,6 +12,7 @@ class BookEditorVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var bookNameTextField: UITextField!
     @IBOutlet weak var actionButton: UIButton!
     @IBOutlet weak var bookDatePicker: UIDatePicker!
+    @IBOutlet weak var actionButtonBottomConstraint: NSLayoutConstraint!
     
     var book: Book?
     
@@ -21,7 +22,19 @@ class BookEditorVC: UIViewController, UITextFieldDelegate {
         
         bookNameTextField.delegate = self
         setupEditor()
+        
+        // Notifications for when the keyboard opens/closes
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(self.keyboardWillShow),
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil)
 
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(self.keyboardWillHide),
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil)
     }
     
     func setupEditor(){
@@ -69,6 +82,47 @@ class BookEditorVC: UIViewController, UITextFieldDelegate {
             dismiss(animated: true, completion: nil)
         }
     }
+// -- MARK: Keyboard vs. button issue
+    @objc func keyboardWillShow(_ notification: NSNotification) {
+        if bookNameTextField.isEditing {
+            moveViewWithKeyboard(notification: notification, viewBottomConstraint: self.actionButtonBottomConstraint, keyboardWillShow: true)
+        }
+    }
     
+    @objc func keyboardWillHide(_ notification: NSNotification) {
+        moveViewWithKeyboard(notification: notification, viewBottomConstraint: self.actionButtonBottomConstraint, keyboardWillShow: false)
+    }
+    
+    func moveViewWithKeyboard(notification: NSNotification, viewBottomConstraint: NSLayoutConstraint, keyboardWillShow: Bool) {
+        
+        
+        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
+            let keyboardHeight = keyboardSize.height
+        
+    // Keyboard's animation duration
+        let keyboardDuration = notification.userInfo![UIResponder.keyboardAnimationDurationUserInfoKey] as! Double
+            
+    // Keyboard's animation curve
+        let keyboardCurve = UIView.AnimationCurve(rawValue: notification.userInfo![UIResponder.keyboardAnimationCurveUserInfoKey] as! Int)!
+            
+        // Change the constant
+        if keyboardWillShow {
+            let safeAreaExists = (self.view?.window?.safeAreaInsets.bottom != 0) // Check if safe area exists
+            let bottomConstant: CGFloat = 20
+            viewBottomConstraint.constant = keyboardHeight + (safeAreaExists ? 0 : bottomConstant)
+        }else {
+            viewBottomConstraint.constant = 20
+        }
+        
+        // Animate the view the same way the keyboard animates
+        let animator = UIViewPropertyAnimator(duration: keyboardDuration, curve: keyboardCurve) { [weak self] in
+            // Update Constraints
+            self?.view.layoutIfNeeded()
+        }
+        
+        // Perform the animation
+        animator.startAnimation()
+        
+    }
 
 }

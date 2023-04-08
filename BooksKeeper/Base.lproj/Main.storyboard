@@ -122,7 +122,7 @@
                                 <rect key="frame" x="20" y="135" width="374" height="216"/>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lVp-gm-Nii">
-                                <rect key="frame" x="35" y="535" width="344" height="35"/>
+                                <rect key="frame" x="35" y="831" width="344" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Button"/>
                                 <connections>
@@ -140,13 +140,14 @@
                             <constraint firstItem="lVp-gm-Nii" firstAttribute="leading" secondItem="hV0-E9-MrC" secondAttribute="leading" constant="35" id="aHR-5E-kUc"/>
                             <constraint firstItem="FNp-5S-hJ4" firstAttribute="top" secondItem="lfB-mC-NSp" secondAttribute="bottom" constant="25" id="b6o-Px-a52"/>
                             <constraint firstItem="lfB-mC-NSp" firstAttribute="top" secondItem="hV0-E9-MrC" secondAttribute="top" constant="20" id="b9e-Wm-NnJ"/>
-                            <constraint firstItem="hV0-E9-MrC" firstAttribute="bottom" secondItem="lVp-gm-Nii" secondAttribute="bottom" constant="316" id="hai-op-zNA"/>
+                            <constraint firstItem="hV0-E9-MrC" firstAttribute="bottom" secondItem="lVp-gm-Nii" secondAttribute="bottom" constant="20" id="hai-op-zNA"/>
                             <constraint firstItem="hV0-E9-MrC" firstAttribute="trailing" secondItem="lfB-mC-NSp" secondAttribute="trailing" constant="20" id="lsn-ky-VPW"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add new book" largeTitleDisplayMode="always" id="kuF-9B-XPm"/>
                     <connections>
                         <outlet property="actionButton" destination="lVp-gm-Nii" id="DvS-UV-CzN"/>
+                        <outlet property="actionButtonBottomConstraint" destination="hai-op-zNA" id="PWQ-gv-nI7"/>
                         <outlet property="bookDatePicker" destination="FNp-5S-hJ4" id="e48-Fo-oz7"/>
                         <outlet property="bookNameTextField" destination="lfB-mC-NSp" id="PbF-fS-otL"/>
                     </connections>
