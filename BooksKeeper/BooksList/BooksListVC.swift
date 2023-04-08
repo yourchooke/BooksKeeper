@@ -30,7 +30,18 @@ class BooksListVC: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        bookList.count
+        if bookList.isEmpty {
+            var emptyLabel = UILabel(frame: CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height))
+            emptyLabel.text = "Empty list"
+            emptyLabel.font = UIFont.boldSystemFont(ofSize: 24.0)
+            emptyLabel.textColor = .lightGray
+            emptyLabel.textAlignment = NSTextAlignment.center
+            self.tableView.backgroundView = emptyLabel
+            self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
+            return 0
+        } else {
+            return bookList.count
+        }
     }
 
     
