@@ -39,6 +39,12 @@ class BookEditorVC: UIViewController, UITextFieldDelegate {
     
     func setupEditor(){
         navigationController?.navigationBar.prefersLargeTitles = true
+        
+        // Date picker bounds
+        bookDatePicker.minimumDate = Date()
+        bookDatePicker.maximumDate = Calendar.current.date(byAdding: .month, value: 3, to: Date())
+        
+        // Editing&Adding
         if let editingBook = book {
             self.title = "Edit info"
             actionButton.setTitle("Edit", for: .normal)
@@ -52,9 +58,12 @@ class BookEditorVC: UIViewController, UITextFieldDelegate {
         }
     }
     
+
     @objc func editingChanged(_ textField: UITextField) {
+        let trimmedString = bookNameTextField.text?.trimingLeadingSpaces()
+        bookNameTextField.text = trimmedString
         guard
-            let name = bookNameTextField.text, !name.isEmpty
+            let name = bookNameTextField.text, !name.isEmpty, name != " "
         else {
             actionButton.isEnabled = false
             return
@@ -82,7 +91,7 @@ class BookEditorVC: UIViewController, UITextFieldDelegate {
             dismiss(animated: true, completion: nil)
         }
     }
-// -- MARK: Keyboard vs. button issue
+//  MARK: Keyboard vs. button issue
     @objc func keyboardWillShow(_ notification: NSNotification) {
         if bookNameTextField.isEditing {
             moveViewWithKeyboard(notification: notification, viewBottomConstraint: self.actionButtonBottomConstraint, keyboardWillShow: true)
@@ -116,7 +125,7 @@ class BookEditorVC: UIViewController, UITextFieldDelegate {
         
         // Animate the view the same way the keyboard animates
         let animator = UIViewPropertyAnimator(duration: keyboardDuration, curve: keyboardCurve) { [weak self] in
-            // Update Constraints
+        // Update Constraints
             self?.view.layoutIfNeeded()
         }
         
@@ -125,4 +134,14 @@ class BookEditorVC: UIViewController, UITextFieldDelegate {
         
     }
 
+}
+
+extension String {
+    func trimingLeadingSpaces(using characterSet: CharacterSet = .whitespaces) -> String {
+        guard let index = firstIndex(where: { !CharacterSet(charactersIn: String($0)).isSubset(of: characterSet) }) else {
+            return self
+        }
+
+        return String(self[index...])
+    }
 }
