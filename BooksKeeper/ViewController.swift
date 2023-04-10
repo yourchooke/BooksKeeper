@@ -11,13 +11,26 @@ class ViewController: UIViewController {
     
     
     @IBOutlet weak var customActivityIndicator: UIImageView!
+    @IBOutlet weak var nameView: UIImageView!
+    @IBOutlet weak var logoView: UIImageView!
+    @IBOutlet weak var buttonStart: UIButton!
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        
+        customActivityIndicator.spin(duration: 5.0) {
+            self.customActivityIndicator.isHidden = true
+            self.nameView.isHidden = false
+            self.logoView.isHidden = false
+            self.buttonStart.isHidden = false
+        }
+            
+            
     }
+    
 
+    
 
 }
 

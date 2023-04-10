@@ -21,6 +21,7 @@
 		2788521F29DEFB99003B2876 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2788521E29DEFB99003B2876 /* StorageManager.swift */; };
 		2788522229DF2E30003B2876 /* BookEditorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2788522129DF2E30003B2876 /* BookEditorVC.swift */; };
 		2788522429DFE02B003B2876 /* BookEditorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2788522329DFE02B003B2876 /* BookEditorViewModel.swift */; };
+		2788522829E4793E003B2876 /* Extension + UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2788522729E4793D003B2876 /* Extension + UIImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		2788521E29DEFB99003B2876 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		2788522129DF2E30003B2876 /* BookEditorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookEditorVC.swift; sourceTree = "<group>"; };
 		2788522329DFE02B003B2876 /* BookEditorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookEditorViewModel.swift; sourceTree = "<group>"; };
+		2788522729E4793D003B2876 /* Extension + UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIImageView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 				278851FC29DEADFE003B2876 /* SceneDelegate.swift */,
 				278851FA29DEADFD003B2876 /* AppDelegate.swift */,
 				278851FE29DEADFE003B2876 /* ViewController.swift */,
+				2788522729E4793D003B2876 /* Extension + UIImageView.swift */,
 				2788520029DEADFE003B2876 /* Main.storyboard */,
 				2788520329DEADFF003B2876 /* Assets.xcassets */,
 				2788520529DEADFF003B2876 /* LaunchScreen.storyboard */,
@@ -203,6 +206,7 @@
 				278851FF29DEADFE003B2876 /* ViewController.swift in Sources */,
 				278851FB29DEADFD003B2876 /* AppDelegate.swift in Sources */,
 				2788521C29DEF90F003B2876 /* Book.swift in Sources */,
+				2788522829E4793E003B2876 /* Extension + UIImageView.swift in Sources */,
 				2788521F29DEFB99003B2876 /* StorageManager.swift in Sources */,
 				278851FD29DEADFE003B2876 /* SceneDelegate.swift in Sources */,
 				2788522429DFE02B003B2876 /* BookEditorViewModel.swift in Sources */,

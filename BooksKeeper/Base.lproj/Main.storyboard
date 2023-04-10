@@ -34,7 +34,7 @@
                                     </imageView>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="078-A4-PA9">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="078-A4-PA9">
                                 <rect key="frame" x="35" y="767.5" width="344" height="34.5"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Start"/>
@@ -57,7 +57,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="buttonStart" destination="078-A4-PA9" id="2ki-oI-Q2W"/>
                         <outlet property="customActivityIndicator" destination="ztH-j2-C6t" id="DfP-3D-fYq"/>
+                        <outlet property="logoView" destination="Lrb-rH-NMa" id="Nw8-6J-jiG"/>
+                        <outlet property="nameView" destination="lWm-Y3-wcY" id="LQM-BW-XaJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
