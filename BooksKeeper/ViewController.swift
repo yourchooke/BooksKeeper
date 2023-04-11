@@ -18,17 +18,19 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         customActivityIndicator.spin(duration: 5.0) {
             self.customActivityIndicator.isHidden = true
-            self.nameView.isHidden = false
-            self.logoView.isHidden = false
-            self.buttonStart.isHidden = false
+            if !UserDefaults.standard.bool(forKey: "bookKeeper") {
+                self.nameView.isHidden = false
+                self.logoView.isHidden = false
+                self.buttonStart.isHidden = false
+                UserDefaults.standard.set(true, forKey: "bookKeeper")
+            } else {
+                self.performSegue(withIdentifier: "fromLoader", sender: (Any).self)
+            }
         }
             
-            
     }
-    
 
     
 

@@ -39,7 +39,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Start"/>
                                 <connections>
-                                    <segue destination="7b1-70-AQj" kind="show" id="UeZ-dB-m6n"/>
+                                    <segue destination="7b1-70-AQj" kind="show" identifier="fromLoader" id="UeZ-dB-m6n"/>
                                 </connections>
                             </button>
                         </subviews>
