@@ -64,7 +64,7 @@ class BookEditorVC: UIViewController, UITextFieldDelegate {
         let trimmedString = bookNameTextField.text?.trimingLeadingSpaces()
         bookNameTextField.text = trimmedString
         guard
-            let name = bookNameTextField.text, !name.isEmpty, name != " "
+            let name = bookNameTextField.text, !name.isEmpty, !name.hasPrefix(" ")
         else {
             actionButton.isEnabled = false
             return
