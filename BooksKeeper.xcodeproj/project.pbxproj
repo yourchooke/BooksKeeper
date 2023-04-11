@@ -21,6 +21,7 @@
 		2788522229DF2E30003B2876 /* BookEditorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2788522129DF2E30003B2876 /* BookEditorVC.swift */; };
 		2788522829E4793E003B2876 /* Extension + UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2788522729E4793D003B2876 /* Extension + UIImageView.swift */; };
 		2788524F29E5862D003B2876 /* Extension + String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2788524E29E5862D003B2876 /* Extension + String.swift */; };
+		2788525429E58861003B2876 /* Extension + UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2788525329E58861003B2876 /* Extension + UIButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		2788522129DF2E30003B2876 /* BookEditorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookEditorVC.swift; sourceTree = "<group>"; };
 		2788522729E4793D003B2876 /* Extension + UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIImageView.swift"; sourceTree = "<group>"; };
 		2788524E29E5862D003B2876 /* Extension + String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + String.swift"; sourceTree = "<group>"; };
+		2788525329E58861003B2876 /* Extension + UIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension + UIButton.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				2788522029DF2DFB003B2876 /* BookEditor */,
 				2788525029E5864E003B2876 /* Extensions */,
 				278851FA29DEADFD003B2876 /* AppDelegate.swift */,
+				2788525329E58861003B2876 /* Extension + UIButton.swift */,
 				278851FC29DEADFE003B2876 /* SceneDelegate.swift */,
 				278851FE29DEADFE003B2876 /* ViewController.swift */,
 				2788522729E4793D003B2876 /* Extension + UIImageView.swift */,
@@ -208,6 +211,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2788522229DF2E30003B2876 /* BookEditorVC.swift in Sources */,
+				2788525429E58861003B2876 /* Extension + UIButton.swift in Sources */,
 				278851FF29DEADFE003B2876 /* ViewController.swift in Sources */,
 				2788524F29E5862D003B2876 /* Extension + String.swift in Sources */,
 				278851FB29DEADFD003B2876 /* AppDelegate.swift in Sources */,
