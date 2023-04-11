@@ -24,4 +24,16 @@ extension UIImageView {
         CATransaction.commit()
     }
     
+    func show(completion: @escaping () -> Void){
+        CATransaction.begin()
+        CATransaction.setCompletionBlock(completion)
+        let show = CABasicAnimation(keyPath:"transform.scale")
+        self.isHidden = false
+        show.duration = 1
+        show.fromValue = 0
+        show.toValue = 1
+        
+        self.layer.add(show, forKey: nil)
+        CATransaction.commit()
+    }
 }

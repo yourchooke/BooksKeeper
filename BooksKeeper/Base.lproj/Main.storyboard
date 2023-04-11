@@ -23,17 +23,6 @@
                                     <constraint firstAttribute="width" constant="100" id="s4G-yy-N3S"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="I9f-fA-yVe">
-                                <rect key="frame" x="71" y="448" width="272" height="0.0"/>
-                                <subviews>
-                                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BooksKeeperName" translatesAutoresizingMaskIntoConstraints="NO" id="lWm-Y3-wcY">
-                                        <rect key="frame" x="0.0" y="0.0" width="272" height="0.0"/>
-                                    </imageView>
-                                    <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BookKeeperLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Lrb-rH-NMa">
-                                        <rect key="frame" x="0.0" y="0.0" width="272" height="0.0"/>
-                                    </imageView>
-                                </subviews>
-                            </stackView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="078-A4-PA9">
                                 <rect key="frame" x="35" y="767.5" width="344" height="34.5"/>
                                 <state key="normal" title="Button"/>
@@ -42,18 +31,25 @@
                                     <segue destination="7b1-70-AQj" kind="show" identifier="fromLoader" id="UeZ-dB-m6n"/>
                                 </connections>
                             </button>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BooksKeeperName" translatesAutoresizingMaskIntoConstraints="NO" id="lWm-Y3-wcY">
+                                <rect key="frame" x="72.5" y="290" width="269" height="40"/>
+                            </imageView>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BookKeeperLogo" translatesAutoresizingMaskIntoConstraints="NO" id="Lrb-rH-NMa">
+                                <rect key="frame" x="71" y="382" width="272" height="225"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="078-A4-PA9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="35" id="2s5-Lg-TgE"/>
+                            <constraint firstItem="lWm-Y3-wcY" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="290" id="7sb-Z8-B7H"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="078-A4-PA9" secondAttribute="bottom" constant="60" id="9eo-LD-iBX"/>
-                            <constraint firstItem="I9f-fA-yVe" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="AEg-mI-wtu"/>
+                            <constraint firstItem="Lrb-rH-NMa" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="382" id="CCm-cS-Rel"/>
                             <constraint firstItem="ztH-j2-C6t" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Ewt-Um-zJ0"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="I9f-fA-yVe" secondAttribute="trailing" constant="71" id="LmP-n8-2a4"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="078-A4-PA9" secondAttribute="trailing" constant="35" id="ZxZ-2O-Xzz"/>
                             <constraint firstItem="ztH-j2-C6t" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="evc-ya-ANk"/>
-                            <constraint firstItem="I9f-fA-yVe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="71" id="yNU-dQ-qzB"/>
+                            <constraint firstItem="Lrb-rH-NMa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gc0-x7-Q6u"/>
+                            <constraint firstItem="lWm-Y3-wcY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oId-Cj-2Ve"/>
                         </constraints>
                     </view>
                     <connections>
