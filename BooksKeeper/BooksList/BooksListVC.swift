@@ -90,7 +90,10 @@ class BooksListVC: UITableViewController {
     
     @IBAction func sortButtonAction(_ sender: Any) {
         // create an actionSheet
-        let actionSheetController: UIAlertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        let prefferedStyle : UIAlertController.Style = UIDevice.current.userInterfaceIdiom == .pad ? UIAlertController.Style.alert : UIAlertController.Style.actionSheet
+        
+        let actionSheetController: UIAlertController = UIAlertController(title: nil, message: nil, preferredStyle: prefferedStyle)
 
         // create an action
         let sortByName: UIAlertAction = UIAlertAction(title: "Sort by name", style: .default) { action -> Void in
