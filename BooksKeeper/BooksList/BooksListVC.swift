@@ -39,9 +39,9 @@ class BooksListVC: UITableViewController {
             emptyLabel.textColor = .lightGray
             emptyLabel.textAlignment = NSTextAlignment.center
             self.tableView.backgroundView = emptyLabel
-            self.tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
             return 0
         } else {
+            self.tableView.backgroundView = nil
             return bookList.count
         }
     }
